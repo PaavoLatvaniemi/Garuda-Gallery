@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+        <!--<div class="container">
+        <div class="color-">
+            <h1>Upload photos</h1>
+            <hr>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <Button type="Submit" class="btn btn-success">Submit</Button>
+            </form>
+        </div>
+        </div>-->
+        <div class="row justify-content-center py-5">
+            <div class="col-lg-4 col-md-6 col-sm-8" data-aos="fade-up">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Upload</h3>
+                        <hr>
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{form.as_p}}
+                            <Button type="Submit" class="btn btn-primary">Submit</Button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock%}
+
+    {% block active %}
+        <script>uploadActive()</script>
+    {% endblock active %}

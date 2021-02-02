@@ -1,0 +1,20 @@
+body {
+    background-image: url(../img/grey_wash_wall.png);
+    font-size: large;
+    
+}
+div{
+  font-size: large;
+}
+
+my.a {
+  color: black;
+}
+.logo a {
+    color: rgba(0,0,0,.9);
+  }
+  
+  .logo a:hover,
+  .logo a:active {
+    text-decoration: none;
+  }

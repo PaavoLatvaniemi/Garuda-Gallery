@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>explorer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'upload/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <div class="site-mobile-menu">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+        <header class="shadow-sm myNavbgColor header-bar d-flex d-lg-block align-items-center" data-aos="fade-left">
+            <div class="site-logo">
+                <a href="..">Gallery</a>
+            </div>
+
+            <div class="d-inline-block d-xl-none ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#"
+                    class="site-menu-toggle js-menu-toggle text-white fix"><span class="icon-menu h3">
+                        <div class="MyContainer">
+                            <div class="MyIcon"></div>
+                            <div class="MyIcon"></div>
+                            <div class="MyIcon"></div>
+                        </div>
+
+                    </span></a>
+            </div>
+
+            <div class="main-menu myfontSize">
+                {% if user.is_authenticated %}
+                <ul class="js-clone-nav">
+                    <li class="active" id='home'><a href="..">Home</a></li>
+                    <li id="explorer"><a href="/explorer">Photos</a></li>
+                    <li id="upload"><a href="/upload">Upload</a></li>
+                    <li id="profile"><a href="/profile">Profile</a></li>
+                    <li><a href="{% url 'logout' %}">Log out</a></li>
+                </ul>
+                {% else %}
+                <ul class="js-clone-nav">
+                    <li><a href="{% url 'login' %}">Login in</a></li>
+                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </header>
+        <main class="main-content">
+
+            <div class="container-fluid photos">
+
+                {% block content %}
+                
+                {% endblock %}
+            </div>
+        </main>
+    </div>
+    <script src="{% static 'js/jquery-3.5.1.min.js'%}"></script>
+    <script src="{% static 'js/aos.js'%}"></script>
+    <script src="{% static 'js/activePage.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+
+    {% block active %}
+    {% endblock active %}
+
+</body>
+
+</html>

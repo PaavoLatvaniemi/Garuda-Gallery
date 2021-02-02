@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-8 pt-4">
+            <figure class="mb-5" data-aos="fade-up">
+            <img src="{{ photo.photo.url }}" alt="Image" class="img-fluid">
+        </figure>
+
+        <h2 class="text-white" data-aos="fade-up">{{photo.name}}</h2>
+        
+        <div data-aos="fade-up">
+              <p>{{photo.caption}}</p>
+              <a href="/explorer/{{photo.id}}/delete" class="btn btn-danger">Delete</a>
+        </div><br><br>
+    </div>
+{% endblock  %}
+
+{% block active %}
+<script>explorerActive()</script>
+{% endblock active %}
